@@ -7,22 +7,11 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
-### Added
-
-- `SYNC.md` — asset and consumer sync strategy
-- `scripts/sync-from-master.sh` — refresh curated assets from monorepo master library
-- `scripts/promote-to-app.sh` — push approved logos to app `public/brands/`
-- `LICENSE` and this changelog
-- `.gitignore` excluding `quarantine/`
-
-### Changed
-
-- Documentation updated for standalone-repo preparation and sync workflow
-
 ## [2.0.0] — 2026-06-09
 
 ### Added
 
+- Published as standalone repo: `github.com/luccmattos/ligas-de-tenis-design-system`
 - Consolidated design system package (Claude DS + Open Design + project assets)
 - CSS tokens (`tokens/`) with textures and single `index.css` entry
 - Seven React reference components with `.d.ts` and agent prompts
@@ -30,7 +19,9 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 - Curated `assets/` (108 web-ready files) with `manifest.csv`
 - Browsable preview at `previews/index.html` with sidebar navigation
 - UI kit references: Maria Esther Panel, Onboarding
-- `styles.css` and `ds-bundle.js` at package root
+- `styles.css`, `ds-bundle.js`, `SYNC.md`, `LICENSE`, sync scripts
+- Git submodule consumption in `ligas-de-tenis` and `maria-esther-panel`
+- `.gitignore` excluding `quarantine/`
 
 ### Changed
 
