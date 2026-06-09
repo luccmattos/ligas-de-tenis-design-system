@@ -7,6 +7,18 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [2.0.2] — 2026-06-09
+
+### Changed
+
+- Docs: parent workspace folder renamed from `ligas/` to `ligas-de-tenis/` (`ligas-de-tenis/ligas-de-tenis` monorepo layout)
+
+## [2.0.1] — 2026-06-09
+
+### Fixed
+
+- Sync scripts auto-detect monorepo when DS runs as submodule or sibling clone
+
 ## [2.0.0] — 2026-06-09
 
 ### Added
