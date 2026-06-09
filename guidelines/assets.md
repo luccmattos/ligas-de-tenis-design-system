@@ -41,12 +41,14 @@ assets/
 
 ## Logo variants by background
 
-| Background | Variant |
-|------------|---------|
-| White / light | `default` |
-| Navy `#1f2e60` | `light` or `blue` |
-| Branded hero / finals | `blue-finals` |
-| Dark (LIRJ) | `dark` |
+| Background | Variant | LAT example |
+|------------|---------|-------------|
+| White / light | `default` | `logo-official-lat-default-ligas-de-tenis.svg` |
+| Navy `#1f2e60` | `light` | `logo-official-lat-light-ligas-de-tenis.svg` |
+| Branded hero / finals | `blue` or `blue-finals` | `logo-official-lat-blue-finals-ligas-de-tenis.svg` |
+| Dark (LIRJ) | `dark` | `logo-official-lirj-dark-ligas-de-tenis.svg` |
+
+`light` = contrast on navy (light blue silhouette + readable wordmark). Not limited to white backgrounds.
 
 ## Format rules
 
@@ -111,6 +113,6 @@ Copies the approved LAT default set to `apps/maria-esther-panel/public/brands/`.
 
 ## Open items
 
-- LAT `light` logo — no vector master yet
+- LAT `blue` logo — SVG only; raster export removed (bad quality); re-export pending
 - LARB logos — raster only (`larb-option-a/b`)
 - Tier names 125/250/500/1000 — pending brand confirmation

@@ -47,7 +47,7 @@ mkdir -p "$DS_ASSETS/logos" "$DS_ASSETS/tournaments" "$DS_ASSETS/products"
 cp "$MASTER/vectors/web/"* "$DS_ASSETS/logos/"
 cp -r "$MASTER/tournaments/"* "$DS_ASSETS/tournaments/"
 
-for dir in lat-cup lisp-cup lat-feminino lt-feminino lisp-feminino lirj-feminino lat-kids; do
+for dir in lat-cup lisp-cup lat-feminino lt-feminino lisp-feminino lirj-feminino lat-kids maria-esther; do
   if [[ -d "$MASTER/products/$dir" ]]; then
     mkdir -p "$DS_ASSETS/products/$dir"
     cp "$MASTER/products/$dir/"*.png "$DS_ASSETS/products/$dir/" 2>/dev/null || true
@@ -55,6 +55,7 @@ for dir in lat-cup lisp-cup lat-feminino lt-feminino lisp-feminino lirj-feminino
   fi
 done
 
+cp "$MASTER/leagues/lt/"*.png "$DS_ASSETS/logos/" 2>/dev/null || true
 cp "$MASTER/leagues/las/"*.png "$DS_ASSETS/logos/" 2>/dev/null || true
 cp "$MASTER/leagues/larb/"*.png "$DS_ASSETS/logos/" 2>/dev/null || true
 
@@ -76,7 +77,9 @@ for f in sorted(ds_assets.rglob("*")):
     rel = f.relative_to(ds_assets)
     name = f.name
     src = "unknown"
-    if (master / "vectors/web" / name).exists():
+    if (master / "leagues/lt" / name).exists():
+        src = f"assets/leagues/lt/{name}"
+    elif (master / "vectors/web" / name).exists():
         src = f"assets/vectors/web/{name}"
     else:
         for league in ("lat", "lisp", "lirj"):
@@ -98,12 +101,17 @@ for f in sorted(ds_assets.rglob("*")):
         if f"-{code}-" in name or name.endswith(f"-{code}"):
             league = code
             break
+    variant = "default"
+    for token in ("blue-finals", "light", "dark", "blue", "default"):
+        if f"-{token}-" in name or name.endswith(f"-{token}"):
+            variant = token
+            break
     rows.append({
         "destination": f"assets/{rel}",
         "source": src,
         "type": name.split("-")[0],
         "league": league,
-        "variant": "default",
+        "variant": variant,
         "format": f.suffix.lstrip("."),
         "md5": hashlib.md5(f.read_bytes()).hexdigest(),
         "usage": "Brand asset",
