@@ -1,0 +1,42 @@
+/* ───────────────────────────────────────────────────────────
+   Ligas de Tênis — Typography tokens
+   Bebas Neue commands; Outfit informs. High contrast between
+   condensed sporty display and clean geometric body.
+   ─────────────────────────────────────────────────────────── */
+
+:root {
+  /* Families */
+  --font-display: 'Bebas Neue', 'Anton', 'Barlow Condensed', sans-serif;
+  --font-body: 'Outfit', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Fluid display sizes (Bebas Neue) */
+  --text-h1: clamp(52px, 6vw, 88px);
+  --text-h2: clamp(36px, 4vw, 56px);
+  --text-display-sm: clamp(28px, 3vw, 40px);
+
+  /* Body / UI scale (Outfit) */
+  --text-h3: 20px;   /* card / component heading */
+  --text-lg: 18px;
+  --text-base: 16px; /* body */
+  --text-sm: 14px;
+  --text-xs: 12px;   /* labels, captions */
+
+  /* Weights (Outfit) */
+  --weight-regular: 400;
+  --weight-medium: 500;
+  --weight-semibold: 600;
+  --weight-bold: 700;
+  --weight-extrabold: 800;
+
+  /* Line heights */
+  --leading-display: 0.95;
+  --leading-tight: 1.2;
+  --leading-snug: 1.45;
+  --leading-body: 1.7;
+
+  /* Letter spacing */
+  --tracking-display: 0.02em;   /* Bebas headlines */
+  --tracking-label: 0.10em;     /* uppercase overlines */
+  --tracking-label-tight: 0.06em;
+}

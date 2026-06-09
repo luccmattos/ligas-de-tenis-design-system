@@ -1,0 +1,27 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Neutral scale" subtitle="Off-white surfaces through high-contrast text" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--surface-card); padding: 24px; color: var(--text-body); }
+  .row { display: grid; grid-template-columns: repeat(7, 1fr); gap: 10px; }
+  .sw { display: flex; flex-direction: column; gap: 6px; }
+  .chip { height: 64px; border-radius: var(--radius-md); border: 1px solid var(--border-subtle); }
+  .name { font-size: 11px; font-weight: 600; color: var(--text-heading); }
+  .hex { font-size: 10px; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.03em; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw"><div class="chip" style="background: var(--color-white);"></div><div class="name">White</div><div class="hex">#ffffff</div></div>
+    <div class="sw"><div class="chip" style="background: var(--color-off-white);"></div><div class="name">Off-white</div><div class="hex">#f3f5f8</div></div>
+    <div class="sw"><div class="chip" style="background: var(--color-gray-1);"></div><div class="name">Gray 1</div><div class="hex">#e8edf5</div></div>
+    <div class="sw"><div class="chip" style="background: var(--color-gray-2);"></div><div class="name">Gray 2</div><div class="hex">#cbcccd</div></div>
+    <div class="sw"><div class="chip" style="background: var(--color-gray-3);"></div><div class="name">Gray 3</div><div class="hex">#94a3b8</div></div>
+    <div class="sw"><div class="chip" style="background: var(--color-gray-4);"></div><div class="name">Gray 4</div><div class="hex">#475569</div></div>
+    <div class="sw"><div class="chip" style="background: var(--color-text);"></div><div class="name">Text</div><div class="hex">#0d1527</div></div>
+  </div>
+</body>
+</html>

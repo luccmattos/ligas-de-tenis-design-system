@@ -1,0 +1,26 @@
+<!-- @dsCard group="Type" viewport="700x280" name="Body — Outfit" subtitle="Geometric, clean, readable from caption to lead" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--surface-card); padding: 28px; color: var(--text-body); }
+  .spec { display: flex; flex-direction: column; gap: 14px; }
+  .line { display: flex; align-items: baseline; gap: 16px; }
+  .t { color: var(--text-body); }
+  .meta { font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em; white-space: nowrap; margin-left: auto; }
+  h3 { font-size: var(--text-h3); font-weight: 700; color: var(--text-heading); margin: 0; }
+  p { margin: 0; max-width: 460px; }
+</style>
+</head>
+<body>
+  <div class="spec">
+    <div class="line"><h3>Card heading — H3 / 20px / 700</h3><span class="meta">Outfit Bold</span></div>
+    <div class="line"><span class="t" style="font-size: 18px;">Lead paragraph at 18px draws the player in.</span><span class="meta">Large · 18px</span></div>
+    <div class="line"><p class="t" style="font-size: 16px; line-height: var(--leading-body);">Body copy at 16px with 1.7 line-height keeps long match rules and onboarding steps comfortable to read.</p><span class="meta">Body · 16px</span></div>
+    <div class="line"><span class="t" style="font-size: 14px; color: var(--text-muted);">Secondary text at 14px for descriptions and helper lines.</span><span class="meta">Small · 14px</span></div>
+    <div class="line"><span class="t" style="font-size: 12px; color: var(--text-subtle);">Caption · timestamp · footnote</span><span class="meta">XS · 12px</span></div>
+  </div>
+</body>
+</html>

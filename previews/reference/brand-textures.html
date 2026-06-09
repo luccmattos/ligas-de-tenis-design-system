@@ -1,0 +1,53 @@
+<!-- @dsCard group="Brand" viewport="760x250" name="Signature textures" subtitle="Court-grid + diagonal hatch on navy, net-mesh desk surface" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--surface-card); padding: 24px; color: var(--text-body); }
+  .row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .panel { position: relative; border-radius: var(--radius-lg); height: 188px; border: 1px solid var(--border-subtle); overflow: hidden; }
+  .panel .cap { position: absolute; left: 14px; bottom: 12px; right: 14px; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; line-height: 1.3; }
+
+  /* Court grid - navy hero: tileable two-tier line rhythm (fine grid + bold "court boxes") */
+  .court {
+    background-color: var(--color-navy);
+    background-image:
+      linear-gradient(rgba(255,255,255,0.16) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.16) 1px, transparent 1px),
+      linear-gradient(rgba(255,255,255,0.055) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255,255,255,0.055) 1px, transparent 1px);
+    background-size: 120px 120px, 120px 120px, 30px 30px, 30px 30px;
+  }
+
+  /* Diagonal hatch - navy anchor: original signature line texture */
+  .hatch {
+    background-color: var(--color-navy);
+    background-image: repeating-linear-gradient(-18deg, transparent, transparent 12px, rgba(255,255,255,0.06) 12px, rgba(255,255,255,0.06) 13px);
+  }
+
+  /* Net mesh - desk surface: tileable diagonal diamond weave */
+  .net-mesh {
+    background-color: var(--color-gray-1);
+    background-image:
+      radial-gradient(ellipse 80% 60% at 100% 0%, rgba(41,170,225,0.14), transparent),
+      repeating-linear-gradient(45deg, rgba(31,46,96,0.08) 0 1px, transparent 1px 11px),
+      repeating-linear-gradient(-45deg, rgba(31,46,96,0.08) 0 1px, transparent 1px 11px);
+  }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="panel court">
+      <span class="cap" style="color: rgba(255,255,255,0.85);">Grade de quadra · navy hero</span>
+    </div>
+    <div class="panel hatch">
+      <span class="cap" style="color: rgba(255,255,255,0.85);">Hachura diagonal · navy anchor</span>
+    </div>
+    <div class="panel net-mesh">
+      <span class="cap" style="color: var(--color-navy);">Malha de rede · desk surface</span>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,24 @@
+<!-- @dsCard group="Colors" viewport="700x150" name="Usage proportion" subtitle="50% white · 25% navy · 12% blue · 8% green · 5% yellow" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--surface-card); padding: 24px; color: var(--text-body); }
+  .bar { display: flex; height: 76px; border-radius: var(--radius-md); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--border-subtle); }
+  .seg { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-weight: 700; }
+  .pct { font-size: 18px; }
+  .tag { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; opacity: 0.85; }
+</style>
+</head>
+<body>
+  <div class="bar">
+    <div class="seg" style="flex: 50; background: var(--color-white); color: var(--text-heading); border-right: 1px solid var(--border-subtle);"><span class="pct">50%</span><span class="tag">Surface</span></div>
+    <div class="seg" style="flex: 25; background: var(--color-navy); color: #fff;"><span class="pct">25%</span><span class="tag">Navy</span></div>
+    <div class="seg" style="flex: 12; background: var(--color-blue); color: #fff;"><span class="pct">12%</span><span class="tag">Blue</span></div>
+    <div class="seg" style="flex: 8; background: var(--color-green); color: #fff;"><span class="pct">8%</span><span class="tag">Green</span></div>
+    <div class="seg" style="flex: 5; background: var(--color-yellow); color: var(--color-navy);"><span class="pct">5%</span><span class="tag">Yel</span></div>
+  </div>
+</body>
+</html>

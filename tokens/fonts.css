@@ -1,0 +1,11 @@
+/* ───────────────────────────────────────────────────────────
+   Ligas de Tênis — Webfonts
+   Display: Bebas Neue (single weight, condensed, all-caps)
+   Body/UI: Outfit (geometric grotesque, 300–800)
+
+   NOTE: Fonts are loaded from the Google Fonts CDN (fonts.gstatic.com).
+   They are NOT bundled offline. If you need self-hosted woff2 files,
+   drop them in tokens/fonts/ and replace the src urls below.
+   ─────────────────────────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700;800&display=swap');

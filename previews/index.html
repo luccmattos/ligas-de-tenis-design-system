@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ligas de Tênis — Design System Preview</title>
+  <link rel="icon" href="../assets/logos/favicon-lat-32.png">
+  <link rel="stylesheet" href="../styles.css">
+  <style>
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      height: 100%;
+      font-family: var(--font-body);
+      color: var(--text-body);
+      background: var(--color-off-white);
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 260px 1fr;
+      height: 100vh;
+    }
+
+    .sidebar {
+      background: var(--color-white);
+      border-right: 1px solid var(--border-subtle);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .sidebar-header {
+      padding: 20px 18px 16px;
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .sidebar-header h1 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 28px;
+      letter-spacing: 0.02em;
+      color: var(--color-navy);
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .sidebar-header p {
+      margin: 6px 0 0;
+      font-size: 12px;
+      color: var(--text-muted);
+    }
+
+    .nav {
+      flex: 1;
+      overflow-y: auto;
+      padding: 12px 10px 24px;
+    }
+
+    .nav-group {
+      margin-bottom: 18px;
+    }
+
+    .nav-group-title {
+      padding: 0 8px 6px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--text-subtle);
+    }
+
+    .nav-item {
+      display: block;
+      width: 100%;
+      text-align: left;
+      padding: 8px 10px;
+      margin-bottom: 2px;
+      border: none;
+      border-radius: var(--radius-sm);
+      background: transparent;
+      font-family: var(--font-body);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--text-body);
+      cursor: pointer;
+      transition: background var(--duration-fast) var(--ease-out);
+    }
+
+    .nav-item:hover {
+      background: var(--color-navy-light);
+    }
+
+    .nav-item.is-active {
+      background: var(--color-blue-muted);
+      color: var(--color-navy);
+      font-weight: 700;
+    }
+
+    .main {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+      background:
+        radial-gradient(circle at 90% 0%, rgba(41, 170, 225, 0.08), transparent 30%),
+        var(--color-off-white);
+    }
+
+    .main-header {
+      padding: 18px 24px;
+      background: rgba(255, 255, 255, 0.92);
+      border-bottom: 1px solid var(--border-subtle);
+      backdrop-filter: blur(8px);
+    }
+
+    .main-header .eyebrow {
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-blue);
+      margin-bottom: 4px;
+    }
+
+    .main-header h2 {
+      margin: 0;
+      font-family: var(--font-display);
+      font-size: 32px;
+      letter-spacing: 0.02em;
+      color: var(--color-navy);
+      text-transform: uppercase;
+      line-height: 1;
+    }
+
+    .main-header p {
+      margin: 8px 0 0;
+      font-size: 14px;
+      color: var(--text-muted);
+      max-width: 60ch;
+    }
+
+    .frame-wrap {
+      flex: 1;
+      padding: 20px 24px 24px;
+      min-height: 0;
+    }
+
+    .frame-card {
+      height: 100%;
+      background: var(--color-white);
+      border: 1px solid var(--border-subtle);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+      background: var(--color-white);
+    }
+
+    @media (max-width: 900px) {
+      .layout {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+      }
+
+      .sidebar {
+        max-height: 40vh;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <h1>Design System</h1>
+        <p>Ligas de Tênis · v2.0</p>
+      </div>
+      <nav class="nav" id="nav" aria-label="Design system sections"></nav>
+    </aside>
+
+    <main class="main">
+      <header class="main-header">
+        <div class="eyebrow" id="section-label">Brand</div>
+        <h2 id="card-title">League family</h2>
+        <p id="card-subtitle">LT umbrella, plus LISP, LAS (squash) and Ravenna beach tennis</p>
+      </header>
+      <div class="frame-wrap">
+        <div class="frame-card">
+          <iframe id="preview-frame" title="Design system preview" src="reference/brand-logo-family.html"></iframe>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const SECTIONS = [
+      {
+        group: 'Brand',
+        items: [
+          { name: 'League family', subtitle: 'LT umbrella, plus LISP, LAS (squash) and Ravenna beach tennis', path: 'reference/brand-logo-family.html' },
+          { name: 'Primary logos — LAT', subtitle: 'White-card badge on light, navy-card badge on dark', path: 'reference/brand-logo-lat.html' },
+          { name: 'Signature textures', subtitle: 'Court-grid + diagonal hatch on navy, net-mesh desk surface', path: 'reference/brand-textures.html' },
+        ],
+      },
+      {
+        group: 'Colors',
+        items: [
+          { name: 'Brand palette', subtitle: 'Navy grounds · Blue acts · Green confirms · Yellow energizes', path: 'reference/colors-brand.html' },
+          { name: 'Signature gradients', subtitle: 'Blue→Navy CTA, Green success, Blue→Green progress', path: 'reference/colors-gradients.html' },
+          { name: 'Neutral scale', subtitle: 'Off-white surfaces through high-contrast text', path: 'reference/colors-neutral.html' },
+          { name: 'Usage proportion', subtitle: '50% white · 25% navy · 12% blue · 8% green · 5% yellow', path: 'reference/colors-proportion.html' },
+          { name: 'Semantic & category', subtitle: 'State colors and ATP-style A/B/C ranking accents', path: 'reference/colors-semantic.html' },
+          { name: 'Brand shades & tints', subtitle: 'Hover/active darks and muted backgrounds for each hue', path: 'reference/colors-shades.html' },
+        ],
+      },
+      {
+        group: 'Spacing',
+        items: [
+          { name: 'Corner radius', subtitle: '8 / 12 / 16 / 20 / pill — soft, never sharp', path: 'reference/radius.html' },
+          { name: 'Elevation & shadows', subtitle: 'Navy-tinted ambient shadows plus colored CTA glows', path: 'reference/shadows.html' },
+          { name: 'Spacing scale', subtitle: '4px base unit — tight gaps to page sections', path: 'reference/spacing-scale.html' },
+        ],
+      },
+      {
+        group: 'Type',
+        items: [
+          { name: 'Body — Outfit', subtitle: 'Geometric, clean, readable from caption to lead', path: 'reference/type-body.html' },
+          { name: 'Display — Bebas Neue', subtitle: 'Condensed all-caps headlines that command the page', path: 'reference/type-display.html' },
+          { name: 'Labels & weights', subtitle: 'Uppercase overlines and the Outfit weight ramp', path: 'reference/type-labels.html' },
+        ],
+      },
+      {
+        group: 'Buttons',
+        items: [
+          { name: 'Button', subtitle: 'Variants, sizes and disabled state', path: '../components/buttons/buttons.card.html' },
+        ],
+      },
+      {
+        group: 'Forms',
+        items: [
+          { name: 'Input', subtitle: 'Inputs, select, and selectable option cards', path: '../components/forms/forms.card.html' },
+        ],
+      },
+      {
+        group: 'Display',
+        items: [
+          { name: 'Badges, Cards & Stepper', subtitle: 'Status pills, content surfaces and multi-step progress', path: '../components/display/display.card.html' },
+        ],
+      },
+      {
+        group: 'Maria Esther Panel',
+        items: [
+          { name: 'Match Desk', subtitle: 'Operator panel — queue, player detail and AI match recommendations', path: '../ui-kits/maria-esther-panel/index.html', fullPage: true },
+        ],
+      },
+      {
+        group: 'Onboarding',
+        items: [
+          { name: 'Registration landing', subtitle: "Hero + multi-step 'quero me inscrever' flow", path: '../ui-kits/onboarding/index.html', fullPage: true },
+        ],
+      },
+    ];
+
+    const nav = document.getElementById('nav');
+    const frame = document.getElementById('preview-frame');
+    const sectionLabel = document.getElementById('section-label');
+    const cardTitle = document.getElementById('card-title');
+    const cardSubtitle = document.getElementById('card-subtitle');
+    let activeBtn = null;
+
+    function selectItem(group, item, btn) {
+      if (activeBtn) activeBtn.classList.remove('is-active');
+      btn.classList.add('is-active');
+      activeBtn = btn;
+
+      sectionLabel.textContent = group;
+      cardTitle.textContent = item.name;
+      cardSubtitle.textContent = item.subtitle;
+      frame.src = item.path;
+
+      history.replaceState(null, '', `#${encodeURIComponent(group)}-${encodeURIComponent(item.name)}`);
+    }
+
+    SECTIONS.forEach((section) => {
+      const groupEl = document.createElement('div');
+      groupEl.className = 'nav-group';
+
+      const titleEl = document.createElement('div');
+      titleEl.className = 'nav-group-title';
+      titleEl.textContent = section.group;
+      groupEl.appendChild(titleEl);
+
+      section.items.forEach((item) => {
+        const btn = document.createElement('button');
+        btn.type = 'button';
+        btn.className = 'nav-item';
+        btn.textContent = item.name;
+        btn.addEventListener('click', () => selectItem(section.group, item, btn));
+        groupEl.appendChild(btn);
+
+        if (!activeBtn && section.group === 'Brand' && item.name === 'League family') {
+          selectItem(section.group, item, btn);
+        }
+      });
+
+      nav.appendChild(groupEl);
+    });
+  </script>
+</body>
+</html>

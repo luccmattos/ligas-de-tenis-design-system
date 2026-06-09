@@ -1,0 +1,73 @@
+/* ───────────────────────────────────────────────────────────
+   Ligas de Tênis — Color tokens
+   The official LAT brand palette. Navy grounds, Blue acts,
+   Green confirms, Yellow energizes. Never hardcode hex.
+   ─────────────────────────────────────────────────────────── */
+
+:root {
+  /* ── Brand — Navy (foundation) ───────────────────────────── */
+  --color-navy: #1f2e60;
+  --color-navy-dark: #142244;
+  --color-navy-light: rgba(31, 46, 96, 0.08);
+
+  /* ── Brand — Sky Blue (primary action) ───────────────────── */
+  --color-blue: #29aae1;
+  --color-blue-light: #5cbde8;
+  --color-blue-muted: rgba(41, 170, 225, 0.12);
+
+  /* ── Brand — Green (positive & growth) ───────────────────── */
+  --color-green: #62b14f;
+  --color-green-dark: #3d7a32;
+  --color-green-muted: rgba(98, 177, 79, 0.12);
+
+  /* ── Brand — Yellow (energy & highlight) ─────────────────── */
+  --color-yellow: #f7c949;
+  --color-yellow-muted: rgba(247, 201, 73, 0.20);
+
+  /* ── Neutral scale ───────────────────────────────────────── */
+  --color-white: #ffffff;
+  --color-off-white: #f3f5f8;
+  --color-gray-1: #e8edf5;
+  --color-gray-2: #cbcccd;
+  --color-gray-3: #94a3b8;
+  --color-gray-4: #475569;
+  --color-text: #0d1527;
+
+  /* ── Semantic aliases ────────────────────────────────────── */
+  --color-primary: var(--color-blue);
+  --color-primary-strong: var(--color-navy);
+  --color-success: var(--color-green);
+  --color-success-strong: var(--color-green-dark);
+  --color-warning: var(--color-yellow);
+  --color-error: #ef4444;
+  --color-error-bg: #fff5f5;
+
+  /* Surfaces */
+  --surface-page: var(--color-off-white);
+  --surface-card: var(--color-white);
+  --surface-dark: var(--color-navy);
+  --surface-dark-deep: var(--color-navy-dark);
+
+  /* Text roles */
+  --text-body: var(--color-text);
+  --text-muted: var(--color-gray-4);
+  --text-subtle: var(--color-gray-3);
+  --text-on-dark: var(--color-white);
+  --text-heading: var(--color-navy);
+  --text-link: var(--color-blue);
+
+  /* Lines */
+  --border-default: var(--color-gray-2);
+  --border-subtle: var(--color-gray-1);
+  --border-focus: var(--color-blue);
+
+  /* ── Category accents (ATP-style A/B/C ranking) ──────────── */
+  --color-cat-a: var(--color-navy);
+  --color-cat-b: var(--color-blue);
+  --color-cat-c: var(--color-green);
+
+  /* ── Signature gradients ─────────────────────────────────── */
+  --gradient-primary: linear-gradient(135deg, var(--color-blue), var(--color-navy));
+  --gradient-success: linear-gradient(135deg, var(--color-green), var(--color-green-dark));
+  --gradient-progress: linear-gradient(90deg, var(--color-blue), var(--color-green));
+}

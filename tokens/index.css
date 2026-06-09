@@ -1,0 +1,11 @@
+/* ───────────────────────────────────────────────────────────
+   Ligas de Tênis — Design System token entry point
+   Import this single file to load all design tokens.
+   ─────────────────────────────────────────────────────────── */
+
+@import url('./fonts.css');
+@import url('./colors.css');
+@import url('./typography.css');
+@import url('./spacing.css');
+@import url('./effects.css');
+@import url('./textures.css');

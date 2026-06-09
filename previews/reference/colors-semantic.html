@@ -1,0 +1,36 @@
+<!-- @dsCard group="Colors" viewport="700x170" name="Semantic & category" subtitle="State colors and ATP-style A/B/C ranking accents" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--surface-card); padding: 24px; color: var(--text-body); display: flex; gap: 28px; }
+  .col { flex: 1; }
+  .h { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); margin: 0 0 12px; }
+  .pills { display: flex; gap: 10px; flex-wrap: wrap; }
+  .pill { font-size: 12px; font-weight: 700; padding: 7px 14px; border-radius: var(--radius-pill); }
+  .cats { display: flex; gap: 12px; }
+  .cat { width: 54px; height: 54px; border-radius: var(--radius-md); display: flex; align-items: center; justify-content: center; font-family: var(--font-display); font-size: 30px; color: #fff; letter-spacing: 0.02em; }
+</style>
+</head>
+<body>
+  <div class="col">
+    <p class="h">Semantic states</p>
+    <div class="pills">
+      <span class="pill" style="background: var(--color-blue-muted); color: var(--color-blue);">Primary</span>
+      <span class="pill" style="background: var(--color-green-muted); color: var(--color-green-dark);">Success</span>
+      <span class="pill" style="background: var(--color-yellow-muted); color: var(--color-navy);">Warning</span>
+      <span class="pill" style="background: var(--color-error-bg); color: var(--color-error);">Error</span>
+    </div>
+  </div>
+  <div class="col">
+    <p class="h">Ranking categories</p>
+    <div class="cats">
+      <div class="cat" style="background: var(--color-cat-a);">A</div>
+      <div class="cat" style="background: var(--color-cat-b);">B</div>
+      <div class="cat" style="background: var(--color-cat-c);">C</div>
+    </div>
+  </div>
+</body>
+</html>

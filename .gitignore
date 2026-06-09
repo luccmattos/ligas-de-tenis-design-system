@@ -1,0 +1,11 @@
+# Local cleanup workspace — never publish
+quarantine/
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# Logs
+*.log

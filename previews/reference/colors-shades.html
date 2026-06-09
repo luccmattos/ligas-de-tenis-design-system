@@ -1,0 +1,51 @@
+<!-- @dsCard group="Colors" viewport="700x180" name="Brand shades & tints" subtitle="Hover/active darks and muted backgrounds for each hue" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--surface-card); padding: 24px; color: var(--text-body); }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; }
+  .stack { display: flex; flex-direction: column; gap: 6px; }
+  .lbl { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--text-muted); }
+  .bar { display: flex; border-radius: var(--radius-md); overflow: hidden; height: 48px; box-shadow: var(--shadow-sm); }
+  .seg { flex: 1; display: flex; align-items: center; justify-content: center; font-size: 10.5px; font-weight: 700; }
+</style>
+</head>
+<body>
+  <div class="grid">
+    <div class="stack">
+      <span class="lbl">Navy</span>
+      <div class="bar">
+        <div class="seg" style="background: var(--color-navy); color:#fff;">base</div>
+        <div class="seg" style="background: var(--color-navy-dark); color:#fff;">dark</div>
+        <div class="seg" style="background: var(--color-navy-light); color: var(--color-navy);">8%</div>
+      </div>
+    </div>
+    <div class="stack">
+      <span class="lbl">Blue</span>
+      <div class="bar">
+        <div class="seg" style="background: var(--color-blue); color:#fff;">base</div>
+        <div class="seg" style="background: var(--color-blue-light); color:#fff;">light</div>
+        <div class="seg" style="background: var(--color-blue-muted); color: var(--color-navy);">12%</div>
+      </div>
+    </div>
+    <div class="stack">
+      <span class="lbl">Green</span>
+      <div class="bar">
+        <div class="seg" style="background: var(--color-green); color:#fff;">base</div>
+        <div class="seg" style="background: var(--color-green-dark); color:#fff;">dark</div>
+        <div class="seg" style="background: var(--color-green-muted); color: var(--color-green-dark);">12%</div>
+      </div>
+    </div>
+    <div class="stack">
+      <span class="lbl">Yellow</span>
+      <div class="bar">
+        <div class="seg" style="background: var(--color-yellow); color: var(--color-navy);">base</div>
+        <div class="seg" style="background: var(--color-yellow-muted); color: var(--color-navy);">20%</div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

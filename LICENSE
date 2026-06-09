@@ -1,0 +1,33 @@
+# Ligas de Tênis Design System — License
+
+## 1. Design system code and documentation
+
+The design system package (tokens, component reference code, guidelines, preview
+HTML, scripts, and documentation) is part of the Venture Builder Workflow
+developed by [Lucas Mattos](https://github.com/luccmattos).
+
+**Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International
+(CC BY-NC-ND 4.0)**
+
+You may share the design system code and docs with attribution, for
+non-commercial purposes, without creating adapted versions — per the full
+license terms at https://creativecommons.org/licenses/by-nc-nd/4.0/
+
+## 2. Brand assets (logos, badges, product marks)
+
+Files under `assets/` are **proprietary to Ligas de Tênis** and its leagues
+(LAT, LISP, LIRJ, LT, LAS, LARB, and related products).
+
+- Do not redistribute outside authorized league products and marketing.
+- Do not modify logo artwork without brand-owner approval.
+- Use only in contexts that represent Ligas de Tênis or its official leagues.
+
+## 3. Fonts
+
+Bebas Neue and Outfit are loaded from Google Fonts. Follow Google Fonts terms
+for web usage. Self-hosting requires separate font license verification.
+
+## 4. Third-party runtime (preview / UI kits)
+
+Preview and UI kit pages load React and Babel from public CDNs (unpkg). Those
+libraries are subject to their own licenses (MIT).

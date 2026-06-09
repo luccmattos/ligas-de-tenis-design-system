@@ -1,0 +1,38 @@
+<!-- @dsCard group="Colors" viewport="700x230" name="Brand palette" subtitle="Navy grounds · Blue acts · Green confirms · Yellow energizes" -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<link rel="stylesheet" href="../../styles.css">
+<style>
+  body { margin: 0; font-family: var(--font-body); background: var(--surface-card); padding: 24px; color: var(--text-body); }
+  .row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; }
+  .sw { border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-sm); border: 1px solid var(--border-subtle); }
+  .chip { height: 92px; display: flex; align-items: flex-end; padding: 10px; }
+  .meta { padding: 10px 12px 12px; }
+  .name { font-weight: 700; font-size: 14px; color: var(--text-heading); }
+  .hex { font-size: 12px; color: var(--text-muted); letter-spacing: 0.04em; font-variant-numeric: tabular-nums; text-transform: uppercase; }
+  .role { display:block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+</style>
+</head>
+<body>
+  <div class="row">
+    <div class="sw">
+      <div class="chip" style="background: var(--color-navy);"><span class="role" style="color: rgba(255,255,255,.85)">Foundation</span></div>
+      <div class="meta"><div class="name">Navy</div><div class="hex">#1f2e60</div></div>
+    </div>
+    <div class="sw">
+      <div class="chip" style="background: var(--color-blue);"><span class="role" style="color: rgba(255,255,255,.95)">Action</span></div>
+      <div class="meta"><div class="name">Sky Blue</div><div class="hex">#29aae1</div></div>
+    </div>
+    <div class="sw">
+      <div class="chip" style="background: var(--color-green);"><span class="role" style="color: rgba(255,255,255,.95)">Success</span></div>
+      <div class="meta"><div class="name">Green</div><div class="hex">#62b14f</div></div>
+    </div>
+    <div class="sw">
+      <div class="chip" style="background: var(--color-yellow);"><span class="role" style="color: var(--color-navy)">Energy</span></div>
+      <div class="meta"><div class="name">Yellow</div><div class="hex">#f7c949</div></div>
+    </div>
+  </div>
+</body>
+</html>

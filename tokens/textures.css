@@ -1,0 +1,21 @@
+/* ───────────────────────────────────────────────────────────
+   Ligas de Tênis — Background texture tokens
+   Sourced from Open Design colors_and_type.css (complements
+   Claude DS tokens). Use on operator desk and navy heroes.
+   ─────────────────────────────────────────────────────────── */
+
+:root {
+  --texture-court-grid:
+    linear-gradient(rgba(31, 46, 96, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(31, 46, 96, 0.045) 1px, transparent 1px);
+  --texture-court-grid-size: 24px;
+
+  --texture-diagonal-hatch:
+    repeating-linear-gradient(
+      -18deg,
+      transparent,
+      transparent 12px,
+      rgba(255, 255, 255, 0.07) 12px,
+      rgba(255, 255, 255, 0.07) 13px
+    );
+}

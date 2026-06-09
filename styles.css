@@ -1,0 +1,7 @@
+/* ═══════════════════════════════════════════════════════════
+   Ligas de Tênis — Design System
+   Global stylesheet entry point. Consumers link THIS file.
+   Keep it as @import lines only — no rules inline.
+   ═══════════════════════════════════════════════════════════ */
+
+@import url('./tokens/index.css');

@@ -1,0 +1,34 @@
+/* ───────────────────────────────────────────────────────────
+   Ligas de Tênis — Radius, shadow & motion tokens
+   Soft rounded corners; navy-tinted shadows; quick confident
+   easing with a 1px lift on hover.
+   ─────────────────────────────────────────────────────────── */
+
+:root {
+  /* Corner radius */
+  --radius-sm: 8px;
+  --radius-md: 12px;   /* buttons, inputs */
+  --radius-lg: 16px;   /* content cards */
+  --radius-xl: 20px;   /* feature / form cards */
+  --radius-pill: 9999px;
+
+  /* Elevation — all tinted with navy (rgba 31,46,96) */
+  --shadow-sm: 0 2px 8px rgba(31, 46, 96, 0.08);
+  --shadow-md: 0 4px 24px rgba(31, 46, 96, 0.10);
+  --shadow-lg: 0 12px 40px rgba(31, 46, 96, 0.14);
+  --shadow-xl: 0 20px 60px rgba(31, 46, 96, 0.18);
+  /* Colored CTA glows */
+  --shadow-blue: 0 4px 16px rgba(41, 170, 225, 0.30);
+  --shadow-green: 0 4px 16px rgba(98, 177, 79, 0.35);
+
+  /* Focus ring */
+  --ring-blue: 0 0 0 3px rgba(41, 170, 225, 0.20);
+
+  /* Motion */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); /* @kind other */
+  --duration-fast: 0.18s; /* @kind other */
+  --duration-base: 0.25s; /* @kind other */
+  --duration-slow: 0.45s; /* @kind other */
+  --lift-hover: translateY(-1px); /* @kind other */
+  --lift-card: translateY(-4px); /* @kind other */
+}
