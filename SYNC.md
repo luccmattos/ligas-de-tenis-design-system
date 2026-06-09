@@ -25,9 +25,21 @@ cd design-system && git checkout v2.0.0 && cd ..
 Environment variables for scripts (when repos are siblings):
 
 ```bash
-export LIGAS_MONOREPO_ROOT=/path/to/ligas-de-tenis
+export LIGAS_MONOREPO_ROOT=/path/to/ligas/ligas-de-tenis
 export LIGAS_APP_ROOT=/path/to/maria-esther-panel   # optional override for promote
 ```
+
+Default layout (sibling repos under `ligas/`):
+
+```
+ligas/
+├── ligas-de-tenis/                 ← monorepo (master assets gitignored)
+└── ligas-de-tenis-design-system/   ← this repo (standalone clone)
+```
+
+Scripts auto-detect the monorepo when:
+- this repo is a submodule at `ligas-de-tenis/design-system/` (parent = monorepo), or
+- this repo is a sibling at `ligas/ligas-de-tenis-design-system/`
 
 Why submodule (for now):
 

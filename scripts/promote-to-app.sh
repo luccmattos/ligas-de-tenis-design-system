@@ -6,9 +6,39 @@ set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DS_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-MONOREPO_ROOT="${LIGAS_MONOREPO_ROOT:-$(cd "$DS_ROOT/../ligas-de-tenis" 2>/dev/null && pwd || true)}"
 SRC="$DS_ROOT/assets/logos"
-DEST="${LIGAS_APP_ROOT:-$MONOREPO_ROOT/apps/maria-esther-panel}/public/brands"
+
+resolve_monorepo_root() {
+  if [[ -n "${LIGAS_MONOREPO_ROOT:-}" && -d "${LIGAS_MONOREPO_ROOT}/apps/maria-esther-panel" ]]; then
+    echo "$LIGAS_MONOREPO_ROOT"
+    return
+  fi
+  local parent
+  parent="$(cd "$DS_ROOT/.." && pwd)"
+  if [[ -d "$parent/apps/maria-esther-panel" ]]; then
+    echo "$parent"
+    return
+  fi
+  if [[ -d "$parent/ligas-de-tenis/apps/maria-esther-panel" ]]; then
+    echo "$(cd "$parent/ligas-de-tenis" && pwd)"
+    return
+  fi
+  if [[ -d "$parent/../ligas-de-tenis/apps/maria-esther-panel" ]]; then
+    echo "$(cd "$parent/../ligas-de-tenis" && pwd)"
+    return
+  fi
+  echo ""
+}
+
+MONOREPO_ROOT="$(resolve_monorepo_root)"
+
+if [[ -n "${LIGAS_APP_ROOT:-}" ]]; then
+  DEST="$LIGAS_APP_ROOT/public/brands"
+elif [[ -n "$MONOREPO_ROOT" && -d "$MONOREPO_ROOT/apps/maria-esther-panel" ]]; then
+  DEST="$MONOREPO_ROOT/apps/maria-esther-panel/public/brands"
+else
+  DEST=""
+fi
 
 FILES=(
   logo-official-lat-default-ligas-de-tenis.svg
@@ -22,7 +52,7 @@ if [[ ! -d "$SRC" ]]; then
   exit 1
 fi
 
-if [[ -z "${LIGAS_APP_ROOT:-}" && ( -z "$MONOREPO_ROOT" || ! -d "$MONOREPO_ROOT/apps/maria-esther-panel" ) ]]; then
+if [[ -z "$DEST" ]]; then
   echo "error: app path not found." >&2
   echo "Set LIGAS_APP_ROOT to maria-esther-panel root, or LIGAS_MONOREPO_ROOT to ligas-de-tenis." >&2
   exit 1

@@ -57,7 +57,7 @@ Curated web-ready assets with canonical naming:
 - `assets/tournaments/` — tier badges per league (SVG)
 - `assets/products/` — cups, feminino, kids
 
-Full inventory: `assets/manifest.csv`. Master library (PDFs, full catalog): `ligas-de-tenis/assets/` in the sibling monorepo (gitignored).
+Full inventory: `assets/manifest.csv`. Master library (PDFs, full catalog): `ligas/ligas-de-tenis/assets/` in the monorepo (gitignored).
 
 **Sync:** see [SYNC.md](./SYNC.md). Flow is masters → design system → apps (one way). Refresh assets with `./scripts/sync-from-master.sh`; promote to apps with `./scripts/promote-to-app.sh`.
 

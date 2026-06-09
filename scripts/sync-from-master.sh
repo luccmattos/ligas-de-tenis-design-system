@@ -1,14 +1,37 @@
 #!/usr/bin/env bash
 # Refresh assets/ from the ligas-de-tenis monorepo master library.
-# Run from anywhere inside this repo.
+# Run from anywhere inside this repo (standalone or submodule).
 
 set -euo pipefail
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 DS_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
-MONOREPO_ROOT="${LIGAS_MONOREPO_ROOT:-$(cd "$DS_ROOT/../ligas-de-tenis" 2>/dev/null && pwd || true)}"
-MASTER="$MONOREPO_ROOT/assets"
 DS_ASSETS="$DS_ROOT/assets"
+
+resolve_monorepo_root() {
+  if [[ -n "${LIGAS_MONOREPO_ROOT:-}" && -d "${LIGAS_MONOREPO_ROOT}/assets/vectors/web" ]]; then
+    echo "$LIGAS_MONOREPO_ROOT"
+    return
+  fi
+  local parent
+  parent="$(cd "$DS_ROOT/.." && pwd)"
+  if [[ -d "$parent/assets/vectors/web" ]]; then
+    echo "$parent"
+    return
+  fi
+  if [[ -d "$parent/ligas-de-tenis/assets/vectors/web" ]]; then
+    echo "$(cd "$parent/ligas-de-tenis" && pwd)"
+    return
+  fi
+  if [[ -d "$parent/../ligas-de-tenis/assets/vectors/web" ]]; then
+    echo "$(cd "$parent/../ligas-de-tenis" && pwd)"
+    return
+  fi
+  echo ""
+}
+
+MONOREPO_ROOT="$(resolve_monorepo_root)"
+MASTER="${MONOREPO_ROOT}/assets"
 
 if [[ -z "$MONOREPO_ROOT" || ! -d "$MASTER/vectors/web" ]]; then
   echo "error: monorepo master library not found." >&2
