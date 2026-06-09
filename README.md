@@ -19,7 +19,7 @@ For agent-assisted generation, also load `prompts/SKILL.md`.
 ## Folder structure
 
 ```
-ligas-de-tenis-design-system/   ← this repo (standalone)
+design-system/               ← git submodule in ligas-de-tenis monorepo (this repo)
 ├── README.md              ← you are here
 ├── DESIGN.md              ← canonical spec for agents and creators
 ├── SYNC.md                ← asset sync strategy (masters → DS → apps)

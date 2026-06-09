@@ -22,24 +22,23 @@ git submodule add https://github.com/luccmattos/ligas-de-tenis-design-system.git
 cd design-system && git checkout v2.0.0 && cd ..
 ```
 
-Environment variables for scripts (when repos are siblings):
+Environment variables for scripts (optional overrides):
 
 ```bash
 export LIGAS_MONOREPO_ROOT=/path/to/ligas-de-tenis/ligas-de-tenis
 export LIGAS_APP_ROOT=/path/to/maria-esther-panel   # optional override for promote
 ```
 
-Default layout (sibling repos under `ligas-de-tenis/`):
+**Local layout (one checkout — submodule only):**
 
 ```
-ligas-de-tenis/
-├── ligas-de-tenis/                 ← monorepo (master assets gitignored)
-└── ligas-de-tenis-design-system/   ← this repo (standalone clone)
+ligas-de-tenis/ligas-de-tenis/          ← monorepo (master assets gitignored)
+└── design-system/                      ← this repo (git submodule @ semver tag)
 ```
 
-Scripts auto-detect the monorepo when:
-- this repo is a submodule at `ligas-de-tenis/design-system/` (parent = monorepo), or
-- this repo is a sibling at `ligas-de-tenis/ligas-de-tenis-design-system/`
+Do **not** keep a second local clone of this repo beside the monorepo; edit, sync, tag, and push from `design-system/` only.
+
+Scripts auto-detect the monorepo when this repo is the submodule at `ligas-de-tenis/design-system/` (parent directory = monorepo root).
 
 Why submodule (for now):
 
@@ -112,26 +111,19 @@ If production needs a logo before a DS release:
 | `quarantine/` | Never synced (local `.gitignore`) |
 | PDF masters | Stay in monorepo master only |
 
-## Submodule layout options
+## Layout
 
-**DS repo (this repository)**
+**GitHub:** standalone repo `ligas-de-tenis-design-system` (public, semver tags).
 
-```
-ligas-de-tenis-design-system/   ← standalone repo root
-├── tokens/
-├── assets/
-└── previews/
-```
-
-**Monorepo consumer layout**
+**Local (monorepo):**
 
 ```
-ligas-de-tenis/
-├── design-system/    ← git submodule → ligas-de-tenis-design-system
+ligas-de-tenis/ligas-de-tenis/
+├── design-system/    ← git submodule → ligas-de-tenis-design-system (work here)
 ├── assets/           ← master library (gitignored)
 └── apps/
     └── maria-esther-panel/
-        ├── design-system/   ← optional submodule (deploy repo)
+        ├── design-system/   ← submodule in deploy repo (same remote)
         └── public/brands/   ← promoted subset
 ```
 

@@ -7,6 +7,12 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+## [2.0.3] — 2026-06-09
+
+### Changed
+
+- Docs: single local checkout via monorepo submodule (`design-system/`); remove redundant sibling clone
+
 ## [2.0.2] — 2026-06-09
 
 ### Changed
