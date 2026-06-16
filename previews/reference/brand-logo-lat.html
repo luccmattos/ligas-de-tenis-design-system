@@ -1,4 +1,4 @@
-<!-- @dsCard group="Brand" viewport="700x240" name="Primary logos — LAT" subtitle="White-card badge on light, navy-card badge on dark" -->
+<!-- @dsCard group="Brand" viewport="760x400" name="Primary logos — LAT" subtitle="Surface-first naming: on-light · on-navy · on-branded" -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,17 +6,34 @@
 <link rel="stylesheet" href="../../styles.css">
 <style>
   body { margin: 0; font-family: var(--font-body); background: var(--surface-card); padding: 24px; color: var(--text-body); }
-  .row { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-  .panel { border-radius: var(--radius-lg); display: flex; align-items: center; justify-content: center; height: 180px; border: 1px solid var(--border-subtle); }
-  .panel img { height: 150px; width: auto; }
+  .row { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .panel { border-radius: var(--radius-lg); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; height: 170px; border: 1px solid var(--border-subtle); }
+  .panel img { height: 120px; width: auto; }
+  .cap { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--text-muted); text-align: center; line-height: 1.4; }
   .light { background: var(--color-off-white); }
   .dark { background: var(--color-navy); }
+  .branded { background: linear-gradient(135deg, var(--color-blue), var(--color-navy)); }
+  .transparent-demo { background: repeating-conic-gradient(#e8edf5 0% 25%, #fff 0% 50%) 50% / 16px 16px; }
 </style>
 </head>
 <body>
   <div class="row">
-    <div class="panel light"><img src="../../assets/logos/logo-official-lat-default-ligas-de-tenis.png" alt="LAT logo on light"></div>
-    <div class="panel dark"><img src="../../assets/logos/logo-official-lat-blue-ligas-de-tenis.png" alt="LAT logo on navy"></div>
+    <div class="panel light">
+      <img src="../../assets/logos/logo-official-lat-default-ligas-de-tenis.svg" alt="LAT default badge">
+      <span class="cap">default · badge · any surface<br><code>legacy: default</code></span>
+    </div>
+    <div class="panel transparent-demo">
+      <img src="../../assets/logos/logo-official-lat-dark-ligas-de-tenis.png" alt="LAT mark on light">
+      <span class="cap">mark-on-light · transparent mark<br><code>legacy: dark</code></span>
+    </div>
+    <div class="panel dark">
+      <img src="../../assets/logos/logo-official-lat-light-ligas-de-tenis.svg" alt="LAT badge on navy">
+      <span class="cap" style="color: rgba(255,255,255,0.7);">badge-on-navy · contrast<br><code>legacy: light</code></span>
+    </div>
+    <div class="panel branded">
+      <img src="../../assets/logos/logo-official-lat-blue-finals-ligas-de-tenis.svg" alt="LAT finals">
+      <span class="cap" style="color: rgba(255,255,255,0.7);">finals · on-branded<br><code>legacy: blue-finals</code></span>
+    </div>
   </div>
 </body>
 </html>

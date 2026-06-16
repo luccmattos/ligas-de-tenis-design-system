@@ -47,7 +47,7 @@ mkdir -p "$DS_ASSETS/logos" "$DS_ASSETS/tournaments" "$DS_ASSETS/products"
 cp "$MASTER/vectors/web/"* "$DS_ASSETS/logos/"
 cp -r "$MASTER/tournaments/"* "$DS_ASSETS/tournaments/"
 
-for dir in lat-cup lisp-cup lat-feminino lt-feminino lisp-feminino lirj-feminino lat-kids; do
+for dir in lat-cup lisp-cup lat-feminino lt-feminino lisp-feminino lirj-feminino lat-kids maria-esther; do
   if [[ -d "$MASTER/products/$dir" ]]; then
     mkdir -p "$DS_ASSETS/products/$dir"
     cp "$MASTER/products/$dir/"*.png "$DS_ASSETS/products/$dir/" 2>/dev/null || true
@@ -55,6 +55,7 @@ for dir in lat-cup lisp-cup lat-feminino lt-feminino lisp-feminino lirj-feminino
   fi
 done
 
+cp "$MASTER/leagues/lt/"*.png "$DS_ASSETS/logos/" 2>/dev/null || true
 cp "$MASTER/leagues/las/"*.png "$DS_ASSETS/logos/" 2>/dev/null || true
 cp "$MASTER/leagues/larb/"*.png "$DS_ASSETS/logos/" 2>/dev/null || true
 
@@ -62,12 +63,16 @@ find "$DS_ASSETS" -name '.DS_Store' -delete
 
 export DS_ROOT MONOREPO_ROOT
 python3 << 'PYEOF'
-import csv, hashlib, os
+import csv, hashlib, os, sys
 from pathlib import Path
 
 root = Path(os.environ["DS_ROOT"])
+monorepo = Path(os.environ["MONOREPO_ROOT"])
+sys.path.insert(0, str(monorepo / "scripts/assets"))
+from logo_taxonomy import infer_logo_variant, taxonomy_for
+
 ds_assets = root / "assets"
-master = Path(os.environ["MONOREPO_ROOT"]) / "assets"
+master = monorepo / "assets"
 rows = []
 
 for f in sorted(ds_assets.rglob("*")):
@@ -76,8 +81,12 @@ for f in sorted(ds_assets.rglob("*")):
     rel = f.relative_to(ds_assets)
     name = f.name
     src = "unknown"
-    if (master / "vectors/web" / name).exists():
+    if (master / "leagues/lt" / name).exists():
+        src = f"assets/leagues/lt/{name}"
+    elif (master / "vectors/web" / name).exists():
         src = f"assets/vectors/web/{name}"
+    elif (master / "leagues/lat" / name).exists():
+        src = f"assets/leagues/lat/{name}"
     else:
         for league in ("lat", "lisp", "lirj"):
             p = master / "tournaments" / league / name
@@ -98,12 +107,19 @@ for f in sorted(ds_assets.rglob("*")):
         if f"-{code}-" in name or name.endswith(f"-{code}"):
             league = code
             break
+    legacy_variant = infer_logo_variant(name) if name.startswith("logo-official-") else ""
+    logo_form, usage_surface, canonical_variant = ("", "", "")
+    if legacy_variant and league:
+        logo_form, usage_surface, canonical_variant = taxonomy_for(league, legacy_variant)
     rows.append({
         "destination": f"assets/{rel}",
         "source": src,
         "type": name.split("-")[0],
         "league": league,
-        "variant": "default",
+        "legacy_variant": legacy_variant,
+        "canonical_variant": canonical_variant or legacy_variant or "default",
+        "logo_form": logo_form,
+        "usage_surface": usage_surface,
         "format": f.suffix.lstrip("."),
         "md5": hashlib.md5(f.read_bytes()).hexdigest(),
         "usage": "Brand asset",
@@ -114,7 +130,8 @@ for f in sorted(ds_assets.rglob("*")):
 out = ds_assets / "manifest.csv"
 with out.open("w", newline="") as fh:
     w = csv.DictWriter(fh, fieldnames=[
-        "destination", "source", "type", "league", "variant",
+        "destination", "source", "type", "league",
+        "legacy_variant", "canonical_variant", "logo_form", "usage_surface",
         "format", "md5", "usage", "format_rule", "status",
     ])
     w.writeheader()

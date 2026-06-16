@@ -22,7 +22,7 @@ Ligas de Tênis sells the experience of competing in an organized amateur circui
 | `las` | Liga Alphaville de Squash | squash |
 | `larb` | Ravenna Beach Tennis | beach-tennis |
 
-**Products:** Ranking de desafios (≤24 matches/semester), Torneio (6-stage ATP-style), Maria Esther Match Desk (operator panel).
+**Products:** Ranking de desafios (≤24 matches/semester), Tournament (6-stage ATP-style), Maria Esther Match Desk (operator panel).
 
 ## 2. Visual theme
 

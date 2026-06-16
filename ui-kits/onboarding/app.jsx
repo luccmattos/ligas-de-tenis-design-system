@@ -49,7 +49,7 @@ function Hero({ onStart }) {
           </div>
         </div>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <img src="../../assets/logos/logo-official-lat-blue-ligas-de-tenis.png" alt="Liga Alphaville de Tênis" style={{ width: '100%', maxWidth: 320, filter: 'drop-shadow(0 24px 48px rgba(0,0,0,0.35))' }} />
+          <img src="../../assets/logos/logo-official-lat-light-ligas-de-tenis.svg" alt="Liga Alphaville de Tênis" style={{ width: '100%', maxWidth: 320, filter: 'drop-shadow(0 24px 48px rgba(0,0,0,0.35))' }} />
         </div>
       </div>
     </section>

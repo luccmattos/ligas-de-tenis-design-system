@@ -7,6 +7,22 @@ Versioning follows [Semantic Versioning](https://semver.org/).
 
 ## [Unreleased]
 
+### Added
+
+- Logo taxonomy columns in `catalog.csv` and `manifest.csv`: `logo_form`, `usage_surface`, `canonical_variant`, `legacy_variant`
+- LAT `mark-on-light` (`legacy: dark`) — transparent PNG promoted to web exports
+- `scripts/assets/logo_taxonomy.py` — shared surface-first mapping
+
+### Changed
+
+- Logo variant docs: surface-first naming (`on-light`, `on-navy`, `on-branded`) with legacy aliases
+- LAT brand preview: 4-panel layout including transparent mark demo
+- `sync-from-master.sh` manifest includes taxonomy columns
+
+### Removed
+
+- `manifest.csv` column `variant` (replaced by `legacy_variant` + `canonical_variant`)
+
 ## [2.0.3] — 2026-06-09
 
 ### Changed

@@ -29,7 +29,7 @@ function LoginScreen({ onSignIn }) {
       <div style={{ position: 'absolute', inset: 0, opacity: 0.06, backgroundImage: 'repeating-linear-gradient(-18deg, transparent, transparent 12px, #fff 12px, #fff 13px)' }} aria-hidden />
       <div style={{ position: 'absolute', right: -96, top: -96, width: 256, height: 256, borderRadius: '50%', background: 'rgba(41,170,225,0.20)', filter: 'blur(48px)' }} aria-hidden />
       <div style={{ position: 'relative', width: '100%', maxWidth: 400, background: 'var(--color-white)', borderRadius: 'var(--radius-xl)', padding: 32, boxShadow: 'var(--shadow-xl)' }}>
-        <img src="../../assets/logos/logo-official-lat-blue-ligas-de-tenis.png" alt="LAT" style={{ height: 64, marginBottom: 18 }} />
+        <img src="../../assets/logos/logo-official-lat-default-ligas-de-tenis.svg" alt="LAT" style={{ height: 64, marginBottom: 18 }} />
         <p style={{ fontFamily: 'var(--font-display)', fontSize: 40, letterSpacing: '0.03em', color: 'var(--color-navy)', margin: 0, lineHeight: 1 }}>MARIA ESTHER</p>
         <p style={{ marginTop: 4, fontSize: 13, fontWeight: 600, textTransform: 'uppercase', letterSpacing: '0.16em', color: 'var(--color-blue)' }}>Match desk — piloto manual</p>
         <div style={{ marginTop: 24, display: 'flex', flexDirection: 'column', gap: 16 }}>

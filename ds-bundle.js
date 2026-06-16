@@ -1278,7 +1278,7 @@ try { (() => {
             boxShadow: 'var(--shadow-xl)'
           }
         }, /*#__PURE__*/React.createElement("img", {
-          src: "../../assets/logos/lat-light.png",
+          src: "../../assets/logos/logo-official-lat-default-ligas-de-tenis.svg",
           alt: "LAT",
           style: {
             height: 64,
@@ -1999,7 +1999,7 @@ try { (() => {
             justifyContent: 'center'
           }
         }, /*#__PURE__*/React.createElement("img", {
-          src: "../../assets/logos/lat-blue.png",
+          src: "../../assets/logos/logo-official-lat-light-ligas-de-tenis.svg",
           alt: "Liga Alphaville de T\xEAnis",
           style: {
             width: '100%',
@@ -2351,7 +2351,7 @@ function LoginScreen({
       boxShadow: 'var(--shadow-xl)'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/logos/lat-light.png",
+    src: "../../assets/logos/logo-official-lat-default-ligas-de-tenis.svg",
     alt: "LAT",
     style: {
       height: 64,
@@ -3070,7 +3070,7 @@ function Hero({
       justifyContent: 'center'
     }
   }, /*#__PURE__*/React.createElement("img", {
-    src: "../../assets/logos/lat-blue.png",
+    src: "../../assets/logos/logo-official-lat-light-ligas-de-tenis.svg",
     alt: "Liga Alphaville de T\xEAnis",
     style: {
       width: '100%',

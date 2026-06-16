@@ -86,7 +86,7 @@ These are standalone React demos (CDN + Babel). Not production code.
 | Source | Role in v2.0 |
 |--------|----------------|
 | Claude DS (Downloads) | **Primary** — tokens, components, voice/tone, guidelines |
-| `documents/design-system-ligas-de-tenis.md` | Visual tokens, accessibility, Tailwind mapping |
+| `documents/design-system-ligas-de-tenis.md` (monorepo) | v1.0 spec — merged here; file is now a redirect |
 | Open Design (`ds-ligas-de-tenis`) | Textures, `DESIGN.md` structure, product modules |
 | `assets/` (project) | **Canonical** logos, badges, products |
 
@@ -117,5 +117,5 @@ Consumers pin this repo as a **git submodule** at semver tags (e.g. `design-syst
 - Changelog: [CHANGELOG.md](./CHANGELOG.md)
 - License: [LICENSE](./LICENSE)
 - Business vision (monorepo): `documents/business-vision-ligas-de-tenis.md`
-- Legacy spec (v1.0): `documents/design-system-ligas-de-tenis.md`
+- Monorepo index (redirect): `documents/design-system-ligas-de-tenis.md`
 - Asset master library (monorepo): `assets/README.md`
