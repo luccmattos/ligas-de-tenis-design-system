@@ -63,16 +63,12 @@ find "$DS_ASSETS" -name '.DS_Store' -delete
 
 export DS_ROOT MONOREPO_ROOT
 python3 << 'PYEOF'
-import csv, hashlib, os, sys
+import csv, hashlib, os
 from pathlib import Path
 
 root = Path(os.environ["DS_ROOT"])
-monorepo = Path(os.environ["MONOREPO_ROOT"])
-sys.path.insert(0, str(monorepo / "scripts/assets"))
-from logo_taxonomy import infer_logo_variant, taxonomy_for
-
 ds_assets = root / "assets"
-master = monorepo / "assets"
+master = Path(os.environ["MONOREPO_ROOT"]) / "assets"
 rows = []
 
 for f in sorted(ds_assets.rglob("*")):
@@ -85,8 +81,6 @@ for f in sorted(ds_assets.rglob("*")):
         src = f"assets/leagues/lt/{name}"
     elif (master / "vectors/web" / name).exists():
         src = f"assets/vectors/web/{name}"
-    elif (master / "leagues/lat" / name).exists():
-        src = f"assets/leagues/lat/{name}"
     else:
         for league in ("lat", "lisp", "lirj"):
             p = master / "tournaments" / league / name
@@ -107,19 +101,17 @@ for f in sorted(ds_assets.rglob("*")):
         if f"-{code}-" in name or name.endswith(f"-{code}"):
             league = code
             break
-    legacy_variant = infer_logo_variant(name) if name.startswith("logo-official-") else ""
-    logo_form, usage_surface, canonical_variant = ("", "", "")
-    if legacy_variant and league:
-        logo_form, usage_surface, canonical_variant = taxonomy_for(league, legacy_variant)
+    variant = "default"
+    for token in ("blue-finals", "light", "dark", "blue", "default"):
+        if f"-{token}-" in name or name.endswith(f"-{token}"):
+            variant = token
+            break
     rows.append({
         "destination": f"assets/{rel}",
         "source": src,
         "type": name.split("-")[0],
         "league": league,
-        "legacy_variant": legacy_variant,
-        "canonical_variant": canonical_variant or legacy_variant or "default",
-        "logo_form": logo_form,
-        "usage_surface": usage_surface,
+        "variant": variant,
         "format": f.suffix.lstrip("."),
         "md5": hashlib.md5(f.read_bytes()).hexdigest(),
         "usage": "Brand asset",
@@ -130,8 +122,7 @@ for f in sorted(ds_assets.rglob("*")):
 out = ds_assets / "manifest.csv"
 with out.open("w", newline="") as fh:
     w = csv.DictWriter(fh, fieldnames=[
-        "destination", "source", "type", "league",
-        "legacy_variant", "canonical_variant", "logo_form", "usage_surface",
+        "destination", "source", "type", "league", "variant",
         "format", "md5", "usage", "format_rule", "status",
     ])
     w.writeheader()

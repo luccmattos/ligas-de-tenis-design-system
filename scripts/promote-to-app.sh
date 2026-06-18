@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Copy approved logos from assets/logos/ to maria-esther-panel public/brands/.
-# Extend FILES when new leagues are promoted to production.
+# public/brands is runtime output; design-system/assets/logos is the source of truth.
 
 set -euo pipefail
 
@@ -34,6 +34,8 @@ MONOREPO_ROOT="$(resolve_monorepo_root)"
 
 if [[ -n "${LIGAS_APP_ROOT:-}" ]]; then
   DEST="$LIGAS_APP_ROOT/public/brands"
+elif [[ -f "$DS_ROOT/../package.json" && -d "$DS_ROOT/../src" ]]; then
+  DEST="$(cd "$DS_ROOT/.." && pwd)/public/brands"
 elif [[ -n "$MONOREPO_ROOT" && -d "$MONOREPO_ROOT/apps/maria-esther-panel" ]]; then
   DEST="$MONOREPO_ROOT/apps/maria-esther-panel/public/brands"
 else
@@ -44,6 +46,12 @@ FILES=(
   logo-official-lat-default-ligas-de-tenis.svg
   logo-official-lat-default-ligas-de-tenis.png
   logo-official-lat-default-ligas-de-tenis@2x.png
+  logo-official-lat-default-ligas-de-tenis-cropped.png
+  logo-official-lat-default-ligas-de-tenis-cropped@2x.png
+  logo-official-lat-light-ligas-de-tenis.svg
+  logo-official-lat-light-ligas-de-tenis.png
+  logo-official-lat-light-ligas-de-tenis@2x.png
+  logo-official-lat-blue-ligas-de-tenis.svg
   favicon-lat-32.png
 )
 
