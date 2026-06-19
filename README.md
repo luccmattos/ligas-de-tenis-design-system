@@ -63,7 +63,7 @@ Full inventory: `assets/manifest.csv`. Master library (PDFs, full catalog): `lig
 
 ### Guidelines
 
-Read `guidelines/` for focused topics: brand, colors, typography, layout, components, assets, voice and tone.
+Read `guidelines/` for focused topics: brand, colors, typography, layout, components, assets, voice and tone, [admin search fields](./guidelines/admin-search-fields.md) (operator panel person lookup).
 
 ### Preview (browsable)
 
@@ -119,3 +119,5 @@ Consumers pin this repo as a **git submodule** at semver tags (e.g. `design-syst
 - Business vision (monorepo): `documents/business-vision-ligas-de-tenis.md`
 - Monorepo index (redirect): `documents/design-system-ligas-de-tenis.md`
 - Asset master library (monorepo): `assets/README.md`
+- Admin search fields (operator panel): [guidelines/admin-search-fields.md](./guidelines/admin-search-fields.md)
+- Cursor rule (monorepo): `.cursor/rules/admin-search-fields.mdc`

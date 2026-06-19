@@ -131,6 +131,8 @@ League interfaces should include:
 
 Reference: `ui-kits/maria-esther-panel/`, `ui-kits/onboarding/`.
 
+**Admin person search** (Leads, Players, Match Desk): see [guidelines/admin-search-fields.md](./guidelines/admin-search-fields.md).
+
 ## 12. Consistency checklist
 
 - [ ] Colors follow 50/25/12/8/5 proportion?
