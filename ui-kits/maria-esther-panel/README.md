@@ -21,6 +21,6 @@ and sends WhatsApp match suggestions manually (MVP "manual pilot").
 Uses DS primitives: `Button`, `Badge`, `Input`, `Select`. Desk surface (court-grid),
 navy hatch and header gradient are taken verbatim from the app's `index.css`.
 
-> Source of truth: `apps/maria-esther-panel/src/components/{MatchDesk,QueuePanel,PlayerDetailPanel,RecommendationCard,LoginScreen}.tsx`.
+> Source of truth: `apps/maria-esther-panel/src/modules/match-desk/{MatchDeskPage,MatchQueueTable,MatchDeskDetailDrawer}.tsx`, `src/modules/players/PlayerProfilePanel.tsx`, and `src/components/{PlayerDetailPanel,RecommendationCard,LoginScreen}.tsx`.
 
 **Search field behavior** (queue + all admin list filters): [guidelines/admin-search-fields.md](../../guidelines/admin-search-fields.md) — placeholder `Nome, e-mail ou WhatsApp`, partial match on name, email, and phone.
